@@ -1,0 +1,39 @@
+.image-wrap {
+    padding: 10px;
+    border: solid 1px #e0e0e0;
+    display: inline-block;
+  }
+  
+  .img-space {
+    border: solid 1px #0df552;
+    border-radius: 8px;
+    background-color: #f5faf3;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    min-height:175px;
+    border-radius: 50%;
+  }
+  
+  .img-space img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    cursor: pointer;
+    border-radius: inherit;
+  }
+
+  .fileInputProfile {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    opacity: 0;
+  }
+  .fileInputProfile[disabled] + .img-space{
+    pointer-events: none;
+    cursor: not-allowed!important;
+  
+  }
+  

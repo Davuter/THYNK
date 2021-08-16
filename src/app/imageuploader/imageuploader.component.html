@@ -1,0 +1,9 @@
+<input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+<div class="img-space">
+    <ng-container *ngIf="isImageSaved; else elseTemplate">
+        <img [src]="cardImageBase64" />
+    </ng-container>
+    <ng-template #elseTemplate>
+        <img src="./../../assets/placeholder.PNG">
+    </ng-template>
+</div>

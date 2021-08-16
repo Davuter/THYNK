@@ -1,0 +1,38 @@
+<p *ngIf="!users"><em>Loading...</em></p>
+
+
+<div class="container" *ngIf="users">
+  <div class="row">
+    <div class="col-md-8 people-nearby">
+        <div class="row">
+          <div class="col-md-9 col-sm-9">
+            <h4>List of Employees</h4>
+          </div>
+          <div class="col-md-3 col-sm-3 right">
+            <a (click)="addnewUser()" class="material-icons pointer">add</a>
+          </div>
+        </div>
+        <div class="nearby-user" *ngFor="let user of users.users">
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <img src="{{user.userPicture}}" alt="user" class="profile-photo-lg">
+            </div>
+            <div class="col-md-7 col-sm-7">
+              <h5><a (click) ="getUserInfo(user.id)"  class="profile-link pointer">{{user.name}}</a></h5>
+              <p class="person-job">{{user.job}}</p>
+            </div>
+            <div class="col-md-3 col-sm-3 right">
+              <a class="material-icons pointer" (click)="onDeleteUser(user.id)">delete</a>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <div class="col-md-4" *ngIf="renderDetail">
+      <app-userdetails [userdetail]="selectedUser" (onDeleteUser)="onDeleteUser($event)" (onEditUser)="onEditUser($event)"></app-userdetails>          
+    </div>
+    <div class="col-md-4" *ngIf="!renderDetail">
+      <app-add-or-edit-user [userdetail]="selectedUser" (onAddUser)="addUser($event)" (onEditUser)="editUser($event)"></app-add-or-edit-user>
+    </div>
+  </div>
+</div>

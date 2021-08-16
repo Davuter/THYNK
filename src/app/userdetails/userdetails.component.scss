@@ -1,0 +1,47 @@
+img.profile-photo-lg{
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+  }
+.person-photo-lg{
+    text-align: center;
+}
+  .person-name{
+      text-align: center;
+      font-size: xx-large;
+      color: rgb(67, 187, 67);
+  }
+
+  .person-job{
+    text-align: center;
+    font-size: x-large;
+    padding-bottom: 20px;
+    color: grey;
+  }
+
+  .person-detail{
+      text-align: left;
+  }
+  .person-detail h5{
+      color: grey;
+  }
+
+  .person-detail p{
+      font-size: x-large;
+  }
+
+.person-buttons{
+    text-align: right;    
+}
+
+.pointer{
+    cursor: pointer;
+  }
+
+  .right{
+    text-align: right;
+  }
+
+  .material-icons {
+    color: rgb(18, 221, 18) !important;
+  }

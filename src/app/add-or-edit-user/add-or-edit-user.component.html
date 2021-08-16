@@ -1,0 +1,56 @@
+<div>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="col-md-12 add-buttons">
+                <button class="material-icons">save</button>
+                <a class="material-icons" type="reset" (click)="onReset()">delete</a>
+            </div>
+            <div class="col-md-12">
+                <fieldset class="form-group">
+                    <div class="custom-file fileInputProfileWrap">
+                         <app-imageuploader [imagebase64]="cardImageBase64" [isImageSaved]="isImageSaved" (onFileChange)="onFileChange($event)"></app-imageuploader>
+                    </div>
+                </fieldset>
+                <div *ngIf="submitted && f.userPicture.errors" class="invalid-feedback">
+                    <div *ngIf="f.userPicture.errors.required">User Picture is required</div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" formControlName="name" class="form-control" placeholder="Name"
+                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" formControlName="job" class="form-control" placeholder="Job"
+                        [ngClass]="{ 'is-invalid': submitted && f.job.errors }" />
+                    <div *ngIf="submitted && f.job.errors" class="invalid-feedback">
+                        <div *ngIf="f.job.errors.required">Job is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Motto</label>
+            <input type="text" formControlName="motto" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Hobbies</label>
+            <input type="text" formControlName="hobbies" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>HomeTown</label>
+            <input type="text" formControlName="hometown" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Personal Blog</label>
+            <input type="text" formControlName="personalBlog" class="form-control" />
+        </div>
+
+    </form>
+</div>

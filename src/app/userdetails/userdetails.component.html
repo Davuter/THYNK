@@ -1,0 +1,38 @@
+
+<div class="row">
+    <p *ngIf="!userdetail"><em>Please select an employee...</em></p>
+</div>
+
+<div class="row" *ngIf="userdetail">
+    <div class="col-md-12 person-buttons">
+        <a (click)="editUser(userdetail.id)" class="material-icons pointer">edit</a>
+        <a (click)="deleteUser(userdetail.id)" class="material-icons pointer">delete</a>
+    </div>
+    <div class="col-md-12">
+        <div class="person-photo-lg">
+            <img src="{{userdetail.userPicture}}" alt="user" class="profile-photo-lg">
+        </div>
+        <div class="person-name">
+           {{userdetail.name}}
+        </div>
+        <div class="person-job">
+            {{userdetail.job}}
+        </div>
+        <div class="person-detail">
+            <h5>Motto</h5>
+            <p>{{userdetail.motto}}</p>
+        </div>
+        <div class="person-detail">
+            <h5>Hobbies</h5>
+            <p>{{userdetail.hobbies}}</p>
+        </div>
+        <div class="person-detail">
+            <h5>HomeTown</h5>
+            <p>{{userdetail.hometown}}</p>
+        </div>
+        <div class="person-detail">
+            <h5>Personal Blog</h5>
+        <p>{{userdetail.personalBlog}}</p>   
+        </div>
+    </div>
+</div>
